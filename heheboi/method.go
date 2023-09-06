@@ -5,12 +5,16 @@ import (
 	"math"
 )
 
+// Khởi tạo struct Rectangle (dài, rộng)
+
 type Rectangle struct {
 	Width  float64
 	Height float64
 }
 
 type Number float64
+
+// Tạo method Abs cho Number
 
 func (n Number) Abs() float64 {
 	if n < 0 {
@@ -20,8 +24,17 @@ func (n Number) Abs() float64 {
 	}
 }
 
+// Tạo method Square cho Struct Rectangle
+
 func (r Rectangle) Square() float64 {
 	return math.Sqrt(r.Width*r.Width + r.Height*r.Height)
+}
+
+// Tạo method Scale cho Struct Rectangle
+
+func (r *Rectangle) Scale(f float64) {
+	r.Width = r.Width * f
+	r.Height = r.Height * f
 }
 
 func main() {
@@ -29,4 +42,6 @@ func main() {
 	fmt.Println(v.Square())
 	a := Number(-2.5464)
 	fmt.Println(a.Abs())
+	v.Scale(5)
+	fmt.Println(v.Square())
 }
