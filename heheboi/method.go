@@ -39,9 +39,9 @@ func (r *Rectangle) Scale(f float64) {
 
 func main() {
 	v := Rectangle{Width: 3, Height: 4}
-	fmt.Println(v.Square())
-	a := Number(-2.5464)
-	fmt.Println(a.Abs())
+	fmt.Println("Đường chéo của hcn là", v.Square())
+	a := Number(-5)
+	fmt.Println("Trị tuyệt đối của", a, "là:", a.Abs())
 	v.Scale(5)
-	fmt.Println(v.Square())
+	fmt.Println("Đường chéo sau khi scale là:", v.Square())
 }
