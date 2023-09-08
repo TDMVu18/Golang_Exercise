@@ -14,7 +14,7 @@ func main() {
 }
 
 func HandlePanic() {
-	a := recover()
+	a := recover() //Tiếp tục chương trình khi có panic
 
 	if a != nil {
 		fmt.Println("Recover", a)
@@ -24,12 +24,12 @@ func HandlePanic() {
 func Divide(num1, num2 int) int {
 	//ngoai le
 
-	defer HandlePanic()
+	defer HandlePanic() //HandlePanic được thêm vào hàng chờ xử lý
 
 	var result int
 
 	if num2 == 0 {
-		panic("Cannot divide a number by zero")
+		panic("Cannot divide a number by zero") //Chương trình tạm ngưng, chạy HandlePanic
 	} else {
 		result = num1 / num2
 	}
