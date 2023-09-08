@@ -5,8 +5,12 @@ import (
 	"net/http"
 )
 
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+
 func homePage(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Home page"))
+	w.Write([]byte("Trang chủ"))
 }
 
 func aboutHandle(w http.ResponseWriter, r *http.Request) {
